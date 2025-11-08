@@ -2,8 +2,11 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp";
 import { SSEServerTransport } from "@modelcontextprotocol/sdk/server/sse";
 import express from "express"
 import { z } from "zod";
+import morgan from "morgan"
 
 const app = express()
+
+app.use(morgan("dev"))
 
 const server = new McpServer({
   name: "MCP for Dog Lovers",
